@@ -1,10 +1,11 @@
+import { FormInput } from 'components/ContactForm/ContactForm.styled';
 import PropTypes from 'prop-types';
 
 const Filter = ({ handleChange, filter }) => {
   return (
     <div>
       <p>Find contacts by name</p>
-      <input type="text" value={filter} onChange={handleChange} />
+      <FormInput type="text" value={filter} onChange={handleChange} />
     </div>
   );
 };

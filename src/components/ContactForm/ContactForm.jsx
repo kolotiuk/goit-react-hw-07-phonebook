@@ -1,6 +1,12 @@
 import { Component } from 'react';
 import { v4 as uuid } from 'uuid';
 import PropTypes from 'prop-types';
+import {
+  Form,
+  ButtonAddContact,
+  FormLabel,
+  FormInput,
+} from './ContactForm.styled';
 
 const INITIAL_STATE = { name: '', number: '' };
 
@@ -31,10 +37,10 @@ class ContactForm extends Component {
     const { handleSubmit, handleInputValue } = this;
     return (
       <div>
-        <form onSubmit={handleSubmit}>
-          <label>
+        <Form onSubmit={handleSubmit}>
+          <FormLabel>
             <p>Name</p>
-            <input
+            <FormInput
               onChange={handleInputValue}
               type="text"
               name="name"
@@ -43,10 +49,10 @@ class ContactForm extends Component {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
             />
-          </label>
-          <label>
+          </FormLabel>
+          <FormLabel>
             <p>Number</p>
-            <input
+            <FormInput
               onChange={handleInputValue}
               type="tel"
               name="number"
@@ -55,9 +61,9 @@ class ContactForm extends Component {
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
             />
-          </label>
-          <button>Add contact</button>
-        </form>
+          </FormLabel>
+          <ButtonAddContact>Add contact</ButtonAddContact>
+        </Form>
       </div>
     );
   }
