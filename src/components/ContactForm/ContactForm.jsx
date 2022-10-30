@@ -1,9 +1,14 @@
 import { Component } from 'react';
 import { v4 as uuid } from 'uuid';
+import PropTypes from 'prop-types';
 
 const INITIAL_STATE = { name: '', number: '' };
 
 class ContactForm extends Component {
+  static propTypes = {
+    handleAddContact: PropTypes.func.isRequired,
+  };
+
   state = INITIAL_STATE;
 
   handleSubmit = e => {
