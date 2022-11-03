@@ -5,11 +5,28 @@ import ContactList from './ContactList';
 import Filter from './Filter';
 
 import { Container } from './Container.styled';
+
+const STORAGE_KEY = 'contacts';
+
 class App extends Component {
   state = {
     contacts: [],
     filter: '',
   };
+
+  componentDidMount() {
+    const parseStorage = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
+    if (parseStorage) {
+      this.setState({ contacts: parseStorage });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.contacts !== this.state.contacts) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.state.contacts));
+    }
+  }
 
   handleAddContact = contact => {
     const sameContact = this.state.contacts.find(
