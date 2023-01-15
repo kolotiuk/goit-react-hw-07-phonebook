@@ -1,3 +1,5 @@
+import { addContact, deleteContact, filterContact } from './actions';
+
 const initialState = {
   contacts: [],
   filter: '',
@@ -5,11 +7,11 @@ const initialState = {
 
 export const contactsReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'contact/addContact':
+    case addContact.type:
       return {
         contacts: [...state.contacts, action.payload],
       };
-    case 'contact/deleteContact':
+    case deleteContact.type:
       return {
         contacts: state.contacts.filter(contact => {
           return contact.id !== action.payload;
@@ -22,7 +24,7 @@ export const contactsReducer = (state = initialState, action) => {
 
 export const filterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'contact/filterContact':
+    case filterContact.type:
       return {
         ...state,
         filter: action.payload,
