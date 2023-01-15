@@ -1,7 +1,7 @@
 import { FormInput } from 'components/ContactForm/ContactForm.styled';
 // import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { filterContact } from './../../redux/actions';
+import { filterContact } from 'redux/slice';
 
 // const Filter = ({ handleChange, filter }) => {
 const Filter = () => {

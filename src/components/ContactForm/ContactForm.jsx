@@ -8,7 +8,7 @@ import {
   FormInput,
 } from './ContactForm.styled';
 import { useDispatch } from 'react-redux';
-import { addContact } from './../../redux/actions';
+import { addContact } from 'redux/slice';
 
 // const INITIAL_STATE = { name: '', number: '' };
 
