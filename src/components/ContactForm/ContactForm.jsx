@@ -6,7 +6,7 @@ import {
   FormInput,
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/slice';
+import { addContact } from 'redux/toolkit/slice';
 import { getContacts } from 'redux/selectors';
 
 const ContactForm = () => {
@@ -62,7 +62,14 @@ const ContactForm = () => {
 };
 
 // ContactForm.propTypes = {
-//   handleAddContact: PropTypes.func.isRequired,
+//   // handleAddContact: PropTypes.func.isRequired,
+//   contacts: PropTypes.arrayOf(
+//     PropTypes.shape({
+//       name: PropTypes.string.isRequired,
+//       number: PropTypes.string.isRequired,
+//       id: PropTypes.string.isRequired,
+//     })
+//   ).isRequired,
 // };
 
 export default ContactForm;

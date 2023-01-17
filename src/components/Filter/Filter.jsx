@@ -1,7 +1,7 @@
-import { FormInput } from 'components/ContactForm/ContactForm.styled';
 // import PropTypes from 'prop-types';
+import { FormInput } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch } from 'react-redux';
-import { filterContact } from 'redux/slice';
+import { filterContact } from 'redux/toolkit/slice';
 
 const Filter = () => {
   const dispatch = useDispatch();
