@@ -7,7 +7,7 @@ import {
   FormLabel,
   FormInput,
 } from './ContactForm.styled';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/slice';
 
 // const INITIAL_STATE = { name: '', number: '' };
@@ -17,16 +17,23 @@ const ContactForm = () => {
 
   // const [name, setName] = useState(INITIAL_STATE.name);
   // const [number, setNumber] = useState(INITIAL_STATE.number);
+  const contacts = useSelector(state => state.contacts.contacts);
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
-    // console.log('form', form.elements.number.value);
 
-    // handleAddContact({ name, number, id: uuid() });
+    const findContactSameName = contacts.find(
+      el => el.name === form.elements.text.value
+    );
+
+    if (findContactSameName) {
+      form.reset();
+      return alert('same name');
+    }
+
     dispatch(addContact(form.elements.text.value, form.elements.number.value));
     form.reset();
-    // reset();
   };
 
   // const handleInputValue = e => {
