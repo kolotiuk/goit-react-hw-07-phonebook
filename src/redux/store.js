@@ -13,7 +13,6 @@ import {
 export const store = configureStore({
   reducer: {
     contacts: persistedContactsReducer,
-    filter: contactsReducer,
   },
   middleware: gedDefaultMiddlewares =>
     gedDefaultMiddlewares({

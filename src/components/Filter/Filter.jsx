@@ -1,17 +1,17 @@
 import { FormInput } from 'components/ContactForm/ContactForm.styled';
 // import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { filterContact } from 'redux/slice';
+// import { getContacts } from 'redux/selectors';
 
 // const Filter = ({ handleChange, filter }) => {
 const Filter = () => {
-  // const filter = useSelector(state => state.filter.filter);
   const dispatch = useDispatch();
 
   const handleChange = e => {
     dispatch(filterContact(e.target.value));
   };
-  
+
   return (
     <div>
       <p>Find contacts by name</p>
