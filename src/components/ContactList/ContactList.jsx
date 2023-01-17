@@ -5,12 +5,14 @@ import { getContacts, getFilteredContacts } from 'redux/selectors';
 
 const ContactList = () => {
   const contacts = useSelector(getContacts);
-  const state = useSelector(getFilteredContacts);
+  const filterName = useSelector(getFilteredContacts);
 
   const dispatch = useDispatch();
 
-  const filteredContacts = state
-    ? contacts.filter(el => el.name.toLowerCase().includes(state.toLowerCase()))
+  const filteredContacts = filterName
+    ? contacts.filter(el =>
+        el.name.toLowerCase().includes(filterName.toLowerCase())
+      )
     : contacts;
 
   const handleDeleteContact = id => dispatch(deleteContact(id));

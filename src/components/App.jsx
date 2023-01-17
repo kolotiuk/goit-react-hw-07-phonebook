@@ -5,59 +5,14 @@ import Filter from './Filter';
 import { Container } from './Container.styled';
 
 const App = () => {
-  // const [contacts, setContacts] = useState(
-  //   () => JSON.parse(localStorage.getItem(STORAGE_KEY)) ?? []
-  // );
-  // const [filter, setFilter] = useState('');
-
-  // useEffect(() => {
-  //   const parseStorage = JSON.parse(localStorage.getItem(STORAGE_KEY));
-
-  //   if (parseStorage) {
-  //     setContacts(parseStorage);
-  //   }
-  // }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem(STORAGE_KEY, JSON.stringify(contacts));
-  // }, [contacts]);
-
-  // const handleAddContact = contact => {
-  //   const sameContact = contacts.find(el => el.name === contact.name);
-
-  //   if (sameContact) {
-  //     alert(`${contact.name} is already in contacts`);
-  //     return;
-  //   }
-
-  //   setContacts([...contacts, contact]);
-  // };
-
-  // const handleChange = e => setFilter(e.target.value);
-
-  // const handleDeleteContact = id => {
-  //   setContacts(contacts.filter(el => el.id !== id));
-  // };
-
-  // const filteredContacts = filter
-  //   ? contacts.filter(el =>
-  //       el.name.toLowerCase().includes(filter.toLowerCase())
-  //     )
-  //   : contacts;
-
   return (
     <Container>
       <h1>Phonebook</h1>
       <ContactForm />
-      {/* <ContactForm handleAddContact={handleAddContact} /> */}
 
       <h2>Contacts</h2>
       <Filter />
-      {/* <Filter handleChange={handleChange} filter={filter} /> */}
-      <ContactList
-      // contacts={filteredContacts}
-      // handleDeleteContact={handleDeleteContact}
-      />
+      <ContactList />
     </Container>
   );
 };
