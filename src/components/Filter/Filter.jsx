@@ -11,6 +11,7 @@ const Filter = () => {
   const handleChange = e => {
     dispatch(filterContact(e.target.value));
   };
+  
   return (
     <div>
       <p>Find contacts by name</p>
