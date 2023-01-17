@@ -1,6 +1,6 @@
 import { FormInput } from 'components/ContactForm/ContactForm.styled';
 // import PropTypes from 'prop-types';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { filterContact } from 'redux/slice';
 // import { getContacts } from 'redux/selectors';
 
