@@ -19,12 +19,14 @@ const ContactList = () => {
 
   return (
     <ul>
-      {filteredContacts.map(el => (
-        <li key={el.id}>
-          {el.name} {el.tel}
-          <button onClick={() => handleDeleteContact(el.id)}>Delete</button>
-        </li>
-      ))}
+      {filteredContacts.length > 0
+        ? filteredContacts.map(el => (
+            <li key={el.id}>
+              {el.name} {el.tel}
+              <button onClick={() => handleDeleteContact(el.id)}>Delete</button>
+            </li>
+          ))
+        : 'You dont have contacts yet'}
     </ul>
   );
 };

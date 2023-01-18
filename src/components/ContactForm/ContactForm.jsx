@@ -23,7 +23,9 @@ const ContactForm = () => {
 
     if (findContactSameName) {
       form.reset();
-      return alert('same name');
+      return alert(
+        `this ${findContactSameName.name} is already in your contact`
+      );
     }
 
     dispatch(addContact(form.elements.text.value, form.elements.number.value));
