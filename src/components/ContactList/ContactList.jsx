@@ -4,16 +4,16 @@ import { deleteContact } from 'redux/toolkit/slice';
 import { getContacts, getFilteredContacts } from 'redux/selectors';
 
 const ContactList = () => {
-  const contacts = useSelector(getContacts);
+  const { items } = useSelector(getContacts);
   const filterName = useSelector(getFilteredContacts);
 
   const dispatch = useDispatch();
 
   const filteredContacts = filterName
-    ? contacts.filter(el =>
+    ? items.filter(el =>
         el.name.toLowerCase().includes(filterName.toLowerCase())
       )
-    : contacts;
+    : items;
 
   const handleDeleteContact = id => dispatch(deleteContact(id));
 

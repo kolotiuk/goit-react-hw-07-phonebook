@@ -11,13 +11,14 @@ import { getContacts } from 'redux/selectors';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const { items } = useSelector(getContacts);
+  console.log('contacts', items);
 
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.target;
 
-    const findContactSameName = contacts.find(
+    const findContactSameName = items.find(
       el => el.name === form.elements.text.value
     );
 
