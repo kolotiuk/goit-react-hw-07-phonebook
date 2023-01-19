@@ -28,7 +28,12 @@ const ContactForm = () => {
       );
     }
 
-    dispatch(addContact(form.elements.text.value, form.elements.number.value));
+    const contactsObject = {
+      name: form.elements.text.value,
+      phone: form.elements.number.value,
+    };
+
+    dispatch(addContact(contactsObject));
     form.reset();
   };
 

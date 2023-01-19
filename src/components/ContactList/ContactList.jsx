@@ -1,6 +1,6 @@
 // import PropTypes from 'prop-types';
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/toolkit/slice';
+import { deleteContact } from 'redux/operationsContacts';
 import { getContacts, getFilteredContacts } from 'redux/selectors';
 
 const ContactList = () => {
@@ -22,7 +22,7 @@ const ContactList = () => {
       {filteredContacts.length > 0
         ? filteredContacts.map(el => (
             <li key={el.id}>
-              {el.name} {el.tel}
+              {el.name} {el.phone}
               <button onClick={() => handleDeleteContact(el.id)}>Delete</button>
             </li>
           ))
