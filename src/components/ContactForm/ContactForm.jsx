@@ -6,13 +6,12 @@ import {
   FormInput,
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/toolkit/slice';
+import { addContact } from 'redux/operationsContacts';
 import { getContacts } from 'redux/selectors';
 
 const ContactForm = () => {
   const dispatch = useDispatch();
   const { items } = useSelector(getContacts);
-  console.log('contacts', items);
 
   const handleSubmit = e => {
     e.preventDefault();
