@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import { FormInput } from 'components/ContactForm/ContactForm.styled';
 import { useDispatch } from 'react-redux';
 import { filterContact } from 'redux/toolkit/slice';
@@ -17,10 +16,5 @@ const Filter = () => {
     </div>
   );
 };
-
-// Filter.propTypes = {
-//   handleChange: PropTypes.func.isRequired,
-//   filter: PropTypes.string.isRequired,
-// };
 
 export default Filter;
