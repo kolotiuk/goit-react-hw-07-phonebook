@@ -6,13 +6,13 @@ import {
 } from './ContactForm.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import { addContact } from 'redux/operationsContacts';
-import { getContacts } from 'redux/selectors';
+import { selectContacts } from 'redux/selectors';
 import { useState } from 'react';
 
 const ContactForm = () => {
   const [userValue, setUserValue] = useState('');
   const dispatch = useDispatch();
-  const { items } = useSelector(getContacts);
+  const items = useSelector(selectContacts);
 
   const handleChangeInput = ({ target: { value, name } }) => {
     setUserValue({ ...userValue, [name]: value });
