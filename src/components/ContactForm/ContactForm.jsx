@@ -1,13 +1,13 @@
+import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addContact } from 'redux/toolkit';
+import { selectContacts } from 'redux/selectors';
 import {
   Form,
   ButtonAddContact,
   FormLabel,
   FormInput,
 } from './ContactForm.styled';
-import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/operationsContacts';
-import { selectContacts } from 'redux/selectors';
-import { useState } from 'react';
 
 const ContactForm = () => {
   const [userValue, setUserValue] = useState('');

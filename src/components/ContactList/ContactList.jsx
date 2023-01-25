@@ -1,13 +1,14 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/operationsContacts';
+import { deleteContact } from 'redux/toolkit';
 import { selectVisibleContacts, selectLoaderContacts } from 'redux/selectors';
-import Spinner from './../Spinner/Spinner';
+import Spinner from 'components/Spinner';
+import { ButtonList, List } from './ContactList.styled';
 
 const ContactList = () => {
   const dispatch = useDispatch();
 
-  const visibleContacts = useSelector(selectVisibleContacts);
   const loader = useSelector(selectLoaderContacts);
+  const visibleContacts = useSelector(selectVisibleContacts);
 
   const handleDeleteContact = id => dispatch(deleteContact(id));
 
@@ -15,12 +16,14 @@ const ContactList = () => {
     <ul>
       {loader ? (
         <Spinner />
-      ) : visibleContacts.length > 0 ? (
+      ) : visibleContacts?.length > 0 ? (
         visibleContacts?.map(el => (
-          <li key={el.id}>
+          <List key={el.id}>
             {el.name} {el.phone}
-            <button onClick={() => handleDeleteContact(el.id)}>Delete</button>
-          </li>
+            <ButtonList onClick={() => handleDeleteContact(el.id)}>
+              Delete
+            </ButtonList>
+          </List>
         ))
       ) : (
         'You dont have contacts yet'
