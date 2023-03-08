@@ -17,10 +17,10 @@ const ContactList = () => {
       {loader ? (
         <Spinner />
       ) : visibleContacts?.length > 0 ? (
-        visibleContacts?.map(el => (
-          <List key={el.id}>
-            {el.name} {el.phone}
-            <ButtonList onClick={() => handleDeleteContact(el.id)}>
+        visibleContacts?.map(({ id, name, phone }) => (
+          <List key={id}>
+            {name} {phone}
+            <ButtonList onClick={() => handleDeleteContact(id)}>
               Delete
             </ButtonList>
           </List>

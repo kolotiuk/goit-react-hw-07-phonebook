@@ -12,7 +12,7 @@ import {
 const ContactForm = () => {
   const [userValue, setUserValue] = useState('');
   const dispatch = useDispatch();
-  const items = useSelector(selectContacts);
+  const contacts = useSelector(selectContacts);
 
   const handleChangeInput = ({ target: { value, name } }) => {
     setUserValue({ ...userValue, [name]: value });
@@ -22,9 +22,10 @@ const ContactForm = () => {
     e.preventDefault();
     const form = e.target;
 
-    const findContactSameName = items.find(el => {
+    const findContactSameName = contacts.find(el => {
       return el.name.toUpperCase() === form.name.value.toUpperCase();
     });
+    
     if (findContactSameName) {
       form.reset();
       return alert(`${findContactSameName.name} is already in your contact`);
