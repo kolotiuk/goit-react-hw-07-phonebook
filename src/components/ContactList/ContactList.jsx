@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { deleteContact } from 'redux/toolkit';
+import { deleteContact } from 'redux/contacts';
 import { selectVisibleContacts, selectLoaderContacts } from 'redux/selectors';
 import Spinner from 'components/Spinner';
 import { ButtonList, List } from './ContactList.styled';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addContact } from 'redux/toolkit';
+import { addContact } from 'redux/contacts';
 import { selectContacts } from 'redux/selectors';
 import {
   Form,
@@ -25,7 +25,7 @@ const ContactForm = () => {
     const findContactSameName = contacts.find(el => {
       return el.name.toUpperCase() === form.name.value.toUpperCase();
     });
-    
+
     if (findContactSameName) {
       form.reset();
       return alert(`${findContactSameName.name} is already in your contact`);

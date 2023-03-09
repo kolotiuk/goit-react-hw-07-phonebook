@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { filterContact } from 'redux/toolkit/slice';
+import { filterContact } from 'redux/contacts/slice';
 import { FormInput } from 'components/ContactForm';
 
 const Filter = () => {
