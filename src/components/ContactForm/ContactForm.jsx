@@ -10,7 +10,7 @@ import {
 } from './ContactForm.styled';
 
 const ContactForm = () => {
-  const [userValue, setUserValue] = useState('');
+  const [userValue, setUserValue] = useState({});
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
